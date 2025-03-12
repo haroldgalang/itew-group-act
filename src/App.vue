@@ -1,47 +1,47 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="main-content">
+    <h1>Vue E-Commerce Store</h1>
+    <div class="components">
+      <div class="container">
+        <ProductList />
+      </div>
+      <div class="container">
+        <Cart />
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+import ProductList from "./components/ProductList.vue";
+import Cart from "./components/Cart.vue";
+
+export default {
+  components: {
+    ProductList,
+    Cart,
+  },
+};
+</script>
+
+<style>
+.main-content {
+  margin-top: 50px;
+  width: 100%;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.components {
+  display: flex;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.container {
+  width: 50%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+h2,
+h1 {
+  margin-bottom: 20px;
 }
 </style>
