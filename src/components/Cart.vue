@@ -2,13 +2,13 @@
     <div>
       <h2>Shopping Cart</h2>
       <p>Total Items: {{ totalItems }}</p>
-      <p>Total Price: ${{ totalPrice }}</p>
+      <p>Total Price: ₱{{ totalPrice }}</p>
       <div class="cart-item-list">
         <div class="cart-item-card" v-for="item in cartItems" :key="item.id">
           <div class="cart-item-details">
             <h3>{{ item.name }}</h3>
             <div class="price-container">
-              <h1>${{ item.price }}</h1>
+              <h1>₱{{ item.price }}</h1>
             </div>
           </div>
           <div class="action-bar">
